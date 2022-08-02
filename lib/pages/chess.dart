@@ -54,6 +54,8 @@ class _ChessPageState extends State<ChessPage> {
       )).then((_){
         try {
           model.dispose();
+        } catch (e) {
+          //ignore
         } finally {
           Get.delete<ChessModel>();
         }

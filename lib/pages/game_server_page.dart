@@ -42,23 +42,28 @@ class _GameServerPageState extends State<GameServerPage> {
   @override
   void dispose() {
     _sub?.cancel();
-    model.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("等待加入"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(),
-            Text("请通知对方进入同一局域网，并点击加入游戏"),
-          ],
+    return WillPopScope(
+      onWillPop: () async {
+        model.dispose();
+        return true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("等待加入"),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(),
+              Text("请通知对方进入同一局域网，并点击加入游戏"),
+            ],
+          ),
         ),
       ),
     );
