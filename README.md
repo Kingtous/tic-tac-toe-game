@@ -6,6 +6,10 @@
 - 局域网联机
 - 支持创建房间
 
+## 架构
+
+![](http://img.kingtous.cn/img/架构图.drawio.png)
+
 ## APP截图
 
 <img src="https://img.kingtous.cn/img/Screenshot_2022-08-02-19-09-18-737_com.example.sms_syncer.jpg" style="zoom:33%;" />
