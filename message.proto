@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package Chess;
+
+message Hello {
+  string from = 1;
+  string peer_name = 2;
+}
+
+message Bye {
+  string from = 1;
+}
+
+message StartGame {
+  uint64 game_id = 1;
+}
+
+message StartGameConfirm {
+  uint64 game_id = 1;
+}
+
+message Action {
+  oneof union {
+    DoRequest do = 1;
+    DoRequestConfirm do_confirm = 2;
+    DeclareWin declare_win = 3;
+    DeclareWinConfirm declare_win_confirm = 4;
+    StartGame start_game = 5;
+    StartGameConfirm start_game_confirm = 6;
+    Hello hello = 7;
+    Bye bye = 8;
+    DeclareNoWin no_win = 9;
+    DeclareNoWinConfirm no_win_confirm = 10;
+  }
+}
+
+message DoRequest {
+  uint64 id = 1;
+  uint32 x = 2;
+  uint32 y = 3;
+  // 是否落子
+  bool press = 4;
+}
+
+message DoRequestConfirm {
+  uint64 id = 1;
+  bool accept = 2;
+}
+
+message DeclareWin {
+  uint64 game_id = 1;
+}
+
+message DeclareWinConfirm {
+  uint64 confirm_game_id = 1;
+  bool accept = 2;
+}
+
+message BroadcastMsg {
+  string ip = 1;
+  string name = 2;
+}
+
+message DeclareNoWin {
+  uint64 game_id = 1;
+}
+
+message DeclareNoWinConfirm {
+  uint64 game_id = 1;
+}
