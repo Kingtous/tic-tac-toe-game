@@ -1,16 +1,14 @@
-# sms_syncer
+# 井字棋游戏Demo
 
-A new Flutter project.
+## 功能描述
 
-## Getting Started
+- 防作弊ACK机制下棋
+- 局域网联机
+- 支持创建房间
 
-This project is a starting point for a Flutter application.
+## APP截图
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://img.kingtous.cn/img/Screenshot_2022-08-02-19-09-18-737_com.example.sms_syncer.jpg" style="zoom:33%;" />
+<img src="https://img.kingtous.cn/img/Screenshot_2022-08-02-19-10-09-783_com.example.sms_syncer.jpg" style="zoom:33%;" />
+<img src="https://img.kingtous.cn/img/Screenshot_2022-08-02-19-10-30-076_com.example.sms_syncer.jpg" style="zoom:33%;" />
+<img src="https://img.kingtous.cn/img/Screenshot_2022-08-02-19-10-36-150_com.example.sms_syncer.jpg" style="zoom:33%;" />
