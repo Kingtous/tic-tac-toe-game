@@ -69,29 +69,31 @@ class _ChessPageState extends State<ChessPage> {
       appBar: AppBar(
         title: const Text("正在游戏"),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Obx(() => Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                height: 30,
-                width: 10,
-                decoration: BoxDecoration(
-                  color: Colors.blue
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Obx(() => Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: 30,
+                  width: 10,
+                  decoration: BoxDecoration(
+                    color: Colors.blue
+                  ),
                 ),
-              ),
-              SizedBox(width: 8.0,),
-              Text(tips.value),
-            ],
-          )).marginSymmetric(horizontal: 8.0,vertical: 8.0),
-          Text("我：${widget.playerIdentifier}, 对方：${getPeerIdentifier()}", style: TextStyle(
-            fontWeight: FontWeight.w900
-          ),),
-          const SizedBox(height: 8.0,),
-          ChessBoard(onTapBoard)
-        ],
+                SizedBox(width: 8.0,),
+                Text(tips.value),
+              ],
+            )).marginSymmetric(horizontal: 8.0,vertical: 8.0),
+            Text("我：${widget.playerIdentifier}, 对方：${getPeerIdentifier()}", style: TextStyle(
+              fontWeight: FontWeight.w900
+            ),),
+            const SizedBox(height: 8.0,),
+            ChessBoard(onTapBoard)
+          ],
+        ),
       ),
     );
   }

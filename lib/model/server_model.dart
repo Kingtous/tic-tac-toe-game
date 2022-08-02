@@ -63,7 +63,7 @@ class ServerModel extends BaseNetworkModel{
         print("send broadcast to ${broadIp}:${broadcastPort} with ${serverName}");
         final buf = msg.writeToBuffer();
         int sz = socket.send(buf, InternetAddress(broadIp), broadcastPort);
-        debugPrint("write size $sz/${buf.length}");
+        // debugPrint("write size $sz/${buf.length}");
         await Future.delayed(const Duration(seconds: 1));
       }
     }

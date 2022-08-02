@@ -24,6 +24,7 @@ class _GameServerPageState extends State<GameServerPage> {
     super.initState();
     _sub = model.registerOnAction((action) async {
       if (action.hasHello()) {
+        model.stopBroadcast();
         // 发送hello
         Get.snackbar('欢迎', "${action.hello.obs}的${action.hello.peerName}", snackPosition: SnackPosition.BOTTOM);
         final ip = await Get.find<NetworkSvc>().currentIp();
@@ -41,6 +42,7 @@ class _GameServerPageState extends State<GameServerPage> {
   @override
   void dispose() {
     _sub?.cancel();
+    model.dispose();
     super.dispose();
   }
 
